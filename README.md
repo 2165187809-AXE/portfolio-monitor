@@ -27,7 +27,7 @@ pip install clawdfolio[all]             # everything
 
 **Options**: real-time Greeks, option chain snapshots, buyback trigger monitor.
 
-**Covered Call Strategy**: Risk-driven CC signals backtested over 11 years — **83% win rate**, **+3.0% annualized alpha** over buy-and-hold. Integrates [Market-Bubble-Index](https://github.com/YichengYang-Ethan/Market-Bubble-Index-Dashboard) bubble risk score for entry timing.
+**Covered Call Strategy**: Risk-driven CC signals backtested over 11 years (2014-2026) — best config **+2.8% annualized alpha** over buy-and-hold at a **74% win rate** (δ=0.30). Integrates [Market-Bubble-Index](https://github.com/YichengYang-Ethan/Market-Bubble-Index-Dashboard) bubble risk score for entry timing.
 
 ## Quick Start
 

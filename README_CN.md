@@ -45,7 +45,7 @@
 ### 期权与策略
 - **期权工具集** — 实时 Greeks、期权链快照、回补触发监控
 - **泡沫风险评分** — 复合市场风险指标（[Market-Bubble-Index-Dashboard](https://github.com/YichengYang-Ethan/Market-Bubble-Index-Dashboard)）
-- **风险驱动 Covered Call** — 11 年回测验证：**83% 胜率**、**+3.0% 年化超额收益**
+- **风险驱动 Covered Call** — 11 年回测：最佳 **+2.8% 年化超额收益**、**74% 胜率**（δ=0.30）
 
 ### 自动化
 - **20+ 金融工作流** — 报告、警报、行情情报、券商快照
@@ -188,7 +188,7 @@ print(f"是否应卖 CC: {risk.should_sell_cc}")
 </details>
 
 <details>
-<summary><strong>风险驱动 Covered Call 策略</strong> — 83% 胜率，+3.0% 超额收益（11 年回测）</summary>
+<summary><strong>风险驱动 Covered Call 策略</strong> — +2.8% 超额收益，74% 胜率（11 年回测）</summary>
 
 基于泡沫风险评分，决定**何时**卖出看涨期权以及选择**什么** Delta。专为杠杆 ETF (TQQQ) 或宽基 ETF (QQQ/SPY) 长期持有者设计。
 
@@ -197,9 +197,9 @@ print(f"是否应卖 CC: {risk.should_sell_cc}")
 | 指标 | 数值 |
 |------|------|
 | 最优阈值 | 风险评分 >= 66 (历史 P85) |
-| 最优 Delta | 0.25 |
-| 胜率 | **83%** |
-| 年化超额收益 | **+3.0%** (相对买入并持有) |
+| 最优 Delta | 0.30（最佳 alpha） |
+| 胜率 | **73.8%** |
+| 年化超额收益 | **+2.8%** (相对买入并持有) |
 | 被行权率 | 1.5% (11 年仅 1 次) |
 
 ```python
@@ -332,7 +332,7 @@ clawdfolio finance run <workflow_id>   # 执行工作流
 ### v2.4.0 (2026-02-28)
 
 - **泡沫风险评分** — 集成 Market-Bubble-Index-Dashboard 的实时回撤风险评分 (0-100)
-- **风险驱动 Covered Call 策略** — 量化 CC 信号：83% 胜率，+3.0% 超额收益（11 年回测）
+- **风险驱动 Covered Call 策略** — 量化 CC 信号：+2.8% 超额收益，74% 胜率（11 年回测）
 - `CoveredCallStrategy`、`check_cc_signals()`、`get_cc_recommendation()` 便捷 API
 - `fetch_bubble_risk()` 支持 Dashboard API + 本地计算回退
 

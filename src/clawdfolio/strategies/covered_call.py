@@ -5,8 +5,9 @@ Options Strategy Playbook v2.1 to generate covered call signals.
 
 Key insight from 11-year backtesting (2014-2026, 64 parameter combos):
   - Optimal threshold: Risk Score ≥ 66 (P85 of historical distribution)
-  - Optimal delta: 0.25 (best alpha: +3.0% ann. over buy-and-hold)
-  - Win rate: 83%, assignment rate: 1.5% (1 in 11 years)
+  - Best-alpha delta: 0.30 (+2.8% ann. alpha over buy-and-hold, 73.8% win rate)
+  - Higher delta (0.20) raises win rate to ~85% at +2.1% alpha
+  - Assignment rate ~1.5% (1 in 65 trades)
   - Signal is ASYMMETRIC: only works for sell-call, NOT for sell-put
 
 References:
@@ -74,9 +75,9 @@ class CoveredCallStrategy:
     and at WHAT delta.  Designed for long-term holders of leveraged
     ETFs (TQQQ) or broad-market ETFs (QQQ/SPY).
 
-    Backtested parameters (optimal, 2014-2026):
-      - risk_threshold=66, delta_normal=0.25 → +3.0% alpha, 83% WR
-      - Conservative: delta_normal=0.20 → +2.51% alpha, 88% WR
+    Backtested parameters (2014-2026):
+      - risk_threshold=66, delta_normal=0.30 → +2.8% alpha, 73.8% WR (best alpha)
+      - Conservative: delta_normal=0.20 → +2.1% alpha, ~85% WR
 
     Usage::
 
